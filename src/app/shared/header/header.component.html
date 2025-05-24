@@ -1,0 +1,40 @@
+<header class="app-header">
+    <mat-toolbar class="header-toolbar">
+      <a [routerLink]="'/'">
+        <img src="assets/imagens/logo-header.png" alt="Logo Sonho Meu" class="logo" />
+      </a>
+  
+      <span class="spacer"></span>
+  
+      <!-- Botão de menu hambúrguer responsivo -->
+      <button mat-icon-button (click)="menuAberto = !menuAberto" class="menu-button">
+        <mat-icon>menu</mat-icon>
+      </button>
+  
+      <!-- Menu responsivo -->
+      <div class="menu-opcoes" [class.aberto]="menuAberto">
+        
+  
+        <!--<button *ngIf="!isLoggedIn()" mat-button (click)="goToRegister()">
+          <mat-icon>person_add</mat-icon> CADASTRE-SE
+        </button>
+        -->
+  
+        <button *ngIf="!isLoggedIn()" mat-button (click)="goToLogin()">
+          <mat-icon>login</mat-icon> LOGIN
+        </button>
+  
+        <!--
+        <button *ngIf="isLoggedIn()" mat-button [routerLink]="'/carrinho'">
+          <mat-icon>shopping_cart</mat-icon>
+          Ver Carrinho
+        </button>
+        -->
+
+        <button *ngIf="isLoggedIn()" mat-button (click)="logout()">
+          <mat-icon>logout</mat-icon> SAIR
+        </button>
+      </div>
+    </mat-toolbar>
+  </header>
+  

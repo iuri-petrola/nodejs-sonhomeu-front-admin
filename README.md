@@ -1,5 +1,20 @@
 # FrontAdmin
 
+
+# criar projeto
+ng new front-Admin --style=scss
+
+# Criar componentes
+ng generate component pages/home
+ng generate service core/servicos/pedidos
+
+# add angular material
+ng add @angular/material
+
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
 
 ## Development server
