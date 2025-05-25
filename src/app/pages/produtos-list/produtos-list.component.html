@@ -1,0 +1,30 @@
+<div class="produtos-container">
+    <div class="topo-lista">
+        <h2>📦 Lista de Produtos</h2>
+
+        <button mat-stroked-button color="primary" [routerLink]="'/home'">
+            <mat-icon>arrow_back</mat-icon>
+            Voltar para pedidos
+        </button>
+    </div>
+
+    <mat-card *ngFor="let produto of produtos" class="produto-card">
+        <div class="produto-conteudo">
+            <img mat-card-image
+                src="{{ produto.banner }}" alt="Imagem do produto" class="produto-imagem"
+            />
+
+            <div class="produto-dados">
+                <h3>{{ produto.name }}</h3>
+                <p><strong>Id:</strong> {{ produto.id }}</p>
+                <p><strong>Preço:</strong> R$ {{ produto.price | number:'1.2-2' }}</p>
+                <p><strong>Categoria:</strong> {{ produto.category.name || 'N/A' }}</p>
+
+                <!--<button mat-button color="primary">Editar</button>-->
+            </div>
+
+        </div>
+
+
+    </mat-card>
+</div>

@@ -17,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
 import { FormBuscaComponent } from './shared/form-busca/form-busca.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -28,6 +29,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { RegisterComponent } from './pages/register/register.component';
+import { ProdutosListComponent } from './pages/produtos-list/produtos-list.component';
+import { ProdutosCadastrarComponent } from './pages/produtos-cadastrar/produtos-cadastrar.component';
 
 
 @NgModule({
@@ -43,7 +46,9 @@ import { RegisterComponent } from './pages/register/register.component';
     FormBuscaComponent,
     LoginComponent,
     RegisterComponent,
-    ModalComponent
+    ModalComponent,
+    ProdutosListComponent,
+    ProdutosCadastrarComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +65,7 @@ import { RegisterComponent } from './pages/register/register.component';
     MatDialogModule,
     HttpClientModule,
     FormsModule,
+    MatMenuModule,
     MatListModule
   ],
   providers: [

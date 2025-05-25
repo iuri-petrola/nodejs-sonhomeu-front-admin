@@ -3,24 +3,47 @@
   margin: 2rem auto;
   padding: 1rem;
 
-  h1 {
-    text-align: center;
-    color: #673ab7;
-    margin-bottom: 2rem;
-  }
-
-  .lista-pedidos {
+  .lista-carrinhos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
   }
 
   .pedido-card {
+    background: #eff5ef;
+    color: #000;
+    border: 1px solid #ddd;
     padding: 1rem;
-    background-color: #fff !important;
-    color: #333;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    mat-card-title,
+    mat-card-subtitle,
+    mat-card-content,
+    mat-card-actions,
+    p,
+    li {
+      color: #000;
+    }
+  }
+
+  .info-cliente {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+
+    p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #333;
+
+      a {
+        color: #673ab7;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }

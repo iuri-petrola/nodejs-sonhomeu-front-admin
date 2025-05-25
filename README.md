@@ -7,6 +7,9 @@ ng new front-Admin --style=scss
 # Criar componentes
 ng generate component pages/home
 ng generate service core/servicos/pedidos
+ng generate component pages/produtos-list
+ng generate component pages/produtos-cadastrar
+
 
 # add angular material
 ng add @angular/material

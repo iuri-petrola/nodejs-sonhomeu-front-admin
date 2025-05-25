@@ -53,7 +53,7 @@ export class AuthService {
     this.userId = null;
     localStorage.removeItem('token');
     localStorage.removeItem('userId');
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
 
   // Método login que chama a API, guarda token e userId

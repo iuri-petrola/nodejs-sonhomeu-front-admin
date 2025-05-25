@@ -1,8 +1,7 @@
 <header class="app-header">
     <mat-toolbar class="header-toolbar">
-      <a [routerLink]="'/'">
-        <img src="assets/imagens/logo-header.png" alt="Logo Sonho Meu" class="logo" />
-      </a>
+
+      <img src="assets/imagens/logo-header.png" alt="Logo header" class="logo" />
   
       <span class="spacer"></span>
   
@@ -19,7 +18,22 @@
           <mat-icon>person_add</mat-icon> CADASTRE-SE
         </button>
         -->
-  
+
+        <button *ngIf="isLoggedIn()" mat-button [matMenuTriggerFor]="menuProdutos">
+          <mat-icon>inventory_2</mat-icon> Produtos
+        </button>
+
+        <mat-menu #menuProdutos="matMenu">
+          <button mat-menu-item [routerLink]="'/produtos'">
+            <mat-icon>list</mat-icon>
+            <span>Listar</span>
+          </button>
+          <button mat-menu-item [routerLink]="'/produtos/cadastrar'">
+            <mat-icon>add</mat-icon>
+            <span>Cadastrar</span>
+          </button>
+        </mat-menu>
+
         <button *ngIf="!isLoggedIn()" mat-button (click)="goToLogin()">
           <mat-icon>login</mat-icon> LOGIN
         </button>

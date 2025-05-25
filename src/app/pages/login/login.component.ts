@@ -24,7 +24,7 @@ export class LoginComponent {
       next: (res) => {
         localStorage.setItem('token', res.token);
         this.alert.success('Login realizado com sucesso!');
-        this.router.navigate(['/']); // redireciona para home ou dashboard
+        this.router.navigate(['/home']); // redireciona para home ou dashboard
       },
       error: (err) => {
         console.error(err);

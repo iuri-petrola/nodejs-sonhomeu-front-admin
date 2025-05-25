@@ -27,7 +27,7 @@ export class PedidosService {
     });
 
     
-   return this.http.get<any[]>(`${this.apiUrl}/cart`, { headers });
+   return this.http.get<any[]>(`${this.apiUrl}/cart/pending`, { headers });
   
   }
 

@@ -13,6 +13,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.pedidosService.listarPedidos().subscribe(res => {
+      //console.log('Resposta da API:', res);
+      //console.log('Primeiro pedido:', res[0]);
+      console.log('Nome do cliente:', res[0]?.user?.name);
       this.pedidos = res;
     });
   }
