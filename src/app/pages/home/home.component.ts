@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertService } from 'src/app/core/servicos/alert.service';
 import { PedidosService } from 'src/app/core/servicos/pedidos.service';
 
 @Component({
@@ -9,7 +10,10 @@ import { PedidosService } from 'src/app/core/servicos/pedidos.service';
 export class HomeComponent implements OnInit {
   pedidos: any[] = [];
 
-  constructor(private pedidosService: PedidosService) {}
+  constructor(
+    private pedidosService: PedidosService,
+    private alert: AlertService
+  ) {}
 
   ngOnInit(): void {
     this.pedidosService.listarPedidos().subscribe(res => {
@@ -19,4 +23,18 @@ export class HomeComponent implements OnInit {
       this.pedidos = res;
     });
   }
+
+  finalizarPedido(cartId: string) {
+    this.pedidosService.finalizarPedido(cartId).subscribe({
+      next: () => {
+        this.alert.success('Pedido finalizado com sucesso!');
+        this.ngOnInit(); // recarrega a lista
+      },
+      error: () => {
+        this.alert.error('Erro ao finalizar pedido.');
+      }
+    });
+  }
+
+
 }
