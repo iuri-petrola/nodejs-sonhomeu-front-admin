@@ -2,6 +2,12 @@
   <h2>📋 Pedidos Aguardando Atendimento</h2>
   <!--<h1>📦 Pedidos Aguardando Atendimento</h1>-->
 
+
+    <div *ngIf="pedidos.length === 0" class="sem-pedidos">
+      💤 Nenhum pedido aguardando atendimento.
+    </div>
+
+
   <div class="lista-carrinhos">
     <mat-card *ngFor="let cart of pedidos" class="pedido-card">     
       <mat-card-content>
