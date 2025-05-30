@@ -1,0 +1,19 @@
+<div class="container-categoria">
+  <form (ngSubmit)="onSubmit()">
+    <h2>➕ Cadastrar Categoria</h2>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Nome da categoria</mat-label>
+      <input
+        matInput
+        [(ngModel)]="nomeCategoria"
+        name="nomeCategoria"
+        required
+      />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">
+      Cadastrar
+    </button>
+  </form>
+</div>

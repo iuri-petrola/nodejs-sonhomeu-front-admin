@@ -50,4 +50,17 @@ export class ProdutosService {
     );
         
   }
+
+  cadastrarProduto(formData: FormData): Observable<any> {
+
+    const token = this.authService.getToken();
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`//,'Content-Type': 'application/json'
+    });
+    
+    return this.httpClient.post(`${this.apiUrl}/product`, formData, { headers });
+
+  }
+
 }

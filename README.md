@@ -9,7 +9,9 @@ ng generate component pages/home
 ng generate service core/servicos/pedidos
 ng generate component pages/produtos-list
 ng generate component pages/produtos-cadastrar
-
+ng generate component pages/categoria-list
+ng generate component pages/categoria-cadastrar
+ng generate service core/servicos/categoria
 
 # add angular material
 ng add @angular/material

@@ -19,6 +19,25 @@
         </button>
         -->
 
+        <!--Categorias-->
+
+        <button *ngIf="isLoggedIn()" mat-button [matMenuTriggerFor]="menuCategorias">
+          <mat-icon>inventory_2</mat-icon> Categorias
+        </button>
+
+        <mat-menu #menuCategorias="matMenu">
+          <button mat-menu-item [routerLink]="'/categorias'">
+            <mat-icon>list</mat-icon>
+            <span>Listar</span>
+          </button>
+          <button mat-menu-item [routerLink]="'/categorias/cadastrar'">
+            <mat-icon>add</mat-icon>
+            <span>Cadastrar</span>
+          </button>
+        </mat-menu>
+
+        <!--Produtos-->
+
         <button *ngIf="isLoggedIn()" mat-button [matMenuTriggerFor]="menuProdutos">
           <mat-icon>inventory_2</mat-icon> Produtos
         </button>

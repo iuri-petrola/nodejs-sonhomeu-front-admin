@@ -31,6 +31,11 @@ import { MatListModule } from '@angular/material/list';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProdutosListComponent } from './pages/produtos-list/produtos-list.component';
 import { ProdutosCadastrarComponent } from './pages/produtos-cadastrar/produtos-cadastrar.component';
+import { CategoriaCadastrarComponent } from './pages/categoria-cadastrar/categoria-cadastrar.component';
+import { CategoriaListComponent } from './pages/categoria-list/categoria-list.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+
 
 
 @NgModule({
@@ -48,7 +53,9 @@ import { ProdutosCadastrarComponent } from './pages/produtos-cadastrar/produtos-
     RegisterComponent,
     ModalComponent,
     ProdutosListComponent,
-    ProdutosCadastrarComponent
+    ProdutosCadastrarComponent,
+    CategoriaCadastrarComponent,
+    CategoriaListComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +73,9 @@ import { ProdutosCadastrarComponent } from './pages/produtos-cadastrar/produtos-
     HttpClientModule,
     FormsModule,
     MatMenuModule,
-    MatListModule
+    MatListModule,
+    MatSelectModule,
+    MatOptionModule
   ],
   providers: [
     AuthService
