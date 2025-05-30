@@ -1,13 +1,13 @@
 <div class="container-categoria">
   <form (ngSubmit)="onSubmit()">
-    <h2>➕ Cadastrar Produtos</h2>
+    <h2>➕ Cadastrar Categoria</h2>
 
     <mat-form-field appearance="fill">
-      <mat-label>Nome do produto</mat-label>
+      <mat-label>Nome da categoria</mat-label>
       <input
         matInput
-        [(ngModel)]="nomeProduto"
-        name="nomeProduto"
+        [(ngModel)]="nomeCategoria"
+        name="nomeCategoria"
         required
       />
     </mat-form-field>

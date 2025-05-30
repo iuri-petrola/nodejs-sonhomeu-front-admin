@@ -31,6 +31,8 @@ import { MatListModule } from '@angular/material/list';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProdutosListComponent } from './pages/produtos-list/produtos-list.component';
 import { ProdutosCadastrarComponent } from './pages/produtos-cadastrar/produtos-cadastrar.component';
+import { CategoriaCadastrarComponent } from './pages/categoria-cadastrar/categoria-cadastrar.component';
+import { CategoriaListComponent } from './pages/categoria-list/categoria-list.component';
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import { ProdutosCadastrarComponent } from './pages/produtos-cadastrar/produtos-
     RegisterComponent,
     ModalComponent,
     ProdutosListComponent,
-    ProdutosCadastrarComponent
+    ProdutosCadastrarComponent,
+    CategoriaCadastrarComponent,
+    CategoriaListComponent
   ],
   imports: [
     BrowserModule,
