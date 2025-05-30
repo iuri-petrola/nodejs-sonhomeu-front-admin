@@ -56,11 +56,10 @@ export class ProdutosService {
     const token = this.authService.getToken();
 
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`,
-      'Content-Type': 'application/json'
+      'Authorization': `Bearer ${token}`//,'Content-Type': 'application/json'
     });
     
-    return this.httpClient.post(`${this.apiUrl}/product`, { name: nome }, { headers });
+    return this.httpClient.post(`${this.apiUrl}/product`, formData, { headers });
 
   }
 

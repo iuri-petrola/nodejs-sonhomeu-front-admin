@@ -1,19 +1,35 @@
-<div class="container-categoria">
-  <form (ngSubmit)="onSubmit()">
-    <h2>➕ Cadastrar Produtos</h2>
+<div class="container-produto">
+  <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <h2>🛒 Cadastrar Produto</h2>
 
     <mat-form-field appearance="fill">
-      <mat-label>Nome do produto</mat-label>
-      <input
-        matInput
-        [(ngModel)]="nomeProduto"
-        name="nomeProduto"
-        required
-      />
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="nome" name="nome" required />
     </mat-form-field>
 
+    <mat-form-field appearance="fill">
+      <mat-label>Preço</mat-label>
+      <input matInput type="number" [(ngModel)]="preco" name="preco" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Descrição</mat-label>
+      <textarea matInput [(ngModel)]="descricao" name="descricao" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Categoria</mat-label>
+      <mat-select [(ngModel)]="categoriaSelecionada" name="categoriaSelecionada" required>
+        <mat-option *ngFor="let cat of categorias" [value]="cat.id">
+          {{ cat.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <input type="file" (change)="onFileChange($event)" />
+
     <button mat-raised-button color="primary" type="submit">
-      Cadastrar
+      Cadastrar Produto
     </button>
   </form>
 </div>
