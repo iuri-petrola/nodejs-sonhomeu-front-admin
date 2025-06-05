@@ -20,7 +20,7 @@ export class LoginComponent {
   ) {}
 
   onLogin() {
-    this.authService.login({ email: this.email, password: this.password }).subscribe({
+    this.authService.login({ email: this.email, password: this.password },  true ).subscribe({
       next: (res) => {
         localStorage.setItem('token', res.token);
         this.alert.success('Login realizado com sucesso!');
@@ -28,7 +28,11 @@ export class LoginComponent {
       },
       error: (err) => {
         console.error(err);
-        this.alert.error('Email ou senha inválidos.');
+        if (err?.error?.error === 'Acesso restrito a administradores') {
+            this.alert.error('Acesso restrito a administradores.');
+        } else {
+            this.alert.error('Email ou senha inválidos.');
+          }
       }
     });
   }
