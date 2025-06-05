@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, tap } from 'rxjs';
@@ -57,8 +57,14 @@ export class AuthService {
   }
 
   // Método login que chama a API, guarda token e userId
-  login(credentials: { email: string; password: string }): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/session`, credentials).pipe(
+  login(credentials: { email: string; password: string }, adminOnly = false): Observable<any> {
+
+    const headers = adminOnly
+      ? new HttpHeaders({ 'x-admin-login': 'true' })
+      : undefined;
+
+
+    return this.http.post<any>(`${this.apiUrl}/session`, credentials, { headers }).pipe(
       tap(response => {
         this.setToken(response.token);
         this.setUserId(response.id);
