@@ -22,6 +22,9 @@
     p,
     li {
       color: #000;
+      margin: 0;
+      padding: 0;
+      line-height: 1.4;
     }
   }
 
@@ -52,6 +55,16 @@
     font-size: 1.2rem;
     color: #777;
     text-align: left;
+  }
+
+  .produto-item {
+    margin-bottom: 1rem; // 🟢 espaço entre produtos
+  }
+
+  .produto-item div {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4; // 🟢 linhas internas mais compactas
   }
 
 }

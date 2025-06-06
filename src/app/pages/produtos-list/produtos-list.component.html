@@ -16,7 +16,7 @@
 
             <div class="produto-dados">
                 <h3>{{ produto.name }}</h3>
-                <p><strong>Id:</strong> {{ produto.id }}</p>
+                <p><strong>Id:</strong> {{ produto.id.slice(0, 8) }}</p>
                 <p><strong>Preço:</strong> R$ {{ produto.price | number:'1.2-2' }}</p>
                 <p><strong>Categoria:</strong> {{ produto.category.name || 'N/A' }}</p>
 
