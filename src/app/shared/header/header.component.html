@@ -67,7 +67,13 @@
         <button *ngIf="isLoggedIn()" mat-button (click)="logout()">
           <mat-icon>logout</mat-icon> SAIR
         </button>
+
+        <span *ngIf="userName" class="user-welcome">
+          Bem-vindo(a), {{ userName }}!
+        </span>
+
       </div>
+
     </mat-toolbar>
   </header>
   
