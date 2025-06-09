@@ -99,5 +99,13 @@
     margin-right: 12px; 
   }
 
+  button[mat-button] {
+    margin-left: 10px;
+  }
+
+  .mat-menu-panel {
+    min-width: 200px;
+  }
+
 }
 

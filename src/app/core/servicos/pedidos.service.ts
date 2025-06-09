@@ -43,4 +43,18 @@ export class PedidosService {
     return this.http.patch(`${this.apiUrl}/cart/finish`, { cartId }, { headers });
   }
 
+  listarPedidosFinalizados(): Observable<any[]> {
+
+    const token = this.authService.getToken();
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    });
+
+    
+   return this.http.get<any[]>(`${this.apiUrl}/cart/finish`, { headers });
+  
+  }
+
 }

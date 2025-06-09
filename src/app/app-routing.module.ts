@@ -7,6 +7,7 @@ import { ProdutosListComponent } from './pages/produtos-list/produtos-list.compo
 import { ProdutosCadastrarComponent } from './pages/produtos-cadastrar/produtos-cadastrar.component';
 import { CategoriaCadastrarComponent } from './pages/categoria-cadastrar/categoria-cadastrar.component';
 import { CategoriaListComponent } from './pages/categoria-list/categoria-list.component';
+import { VendasComponent } from './pages/relatorio/vendas/vendas.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,9 @@ const routes: Routes = [
   { path: 'produtos', component: ProdutosListComponent },
   { path: 'produtos/cadastrar', component: ProdutosCadastrarComponent },
   { path: 'categorias', component: CategoriaListComponent },
-  { path: 'categorias/cadastrar', component: CategoriaCadastrarComponent }
+  { path: 'categorias/cadastrar', component: CategoriaCadastrarComponent },
+  { path: 'relatorio-vendas', component: VendasComponent}
+
 ];
 
 @NgModule({

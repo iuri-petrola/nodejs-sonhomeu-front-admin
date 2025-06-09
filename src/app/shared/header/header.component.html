@@ -53,6 +53,19 @@
           </button>
         </mat-menu>
 
+        <!--Relatorios-->
+
+        <button *ngIf="isLoggedIn()" mat-button [matMenuTriggerFor]="menuRelatorios">
+          <mat-icon>insert_chart</mat-icon> Relatórios
+        </button>
+
+        <mat-menu #menuRelatorios="matMenu">
+          <button mat-menu-item [routerLink]="'/relatorio-vendas'">
+            <mat-icon>list</mat-icon> Pedidos Finalizados
+          </button>
+        </mat-menu>
+
+
         <button *ngIf="!isLoggedIn()" mat-button (click)="goToLogin()">
           <mat-icon>login</mat-icon> LOGIN
         </button>

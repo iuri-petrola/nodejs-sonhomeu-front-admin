@@ -1,0 +1,87 @@
+.relatorio-container {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 1rem;
+
+  .lista-carrinhos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+
+  .venda-card {
+    background: #eff5ef;
+    color: #000;
+    border: 1px solid #ddd;
+    padding: 1rem;
+
+    mat-card-title,
+    mat-card-subtitle,
+    mat-card-content,
+    mat-card-actions,
+    p,
+    li {
+      color: #000;
+      margin: 0;
+      padding: 0;
+      line-height: 1.4;
+    }
+  }
+
+  .info-cliente {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+
+    p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #333;
+
+      a {
+        color: #673ab7;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .sem-vendas {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #777;
+    text-align: left;
+  }
+
+  .produto-item {
+    margin-bottom: 1rem; // 🟢 espaço entre produtos
+  }
+
+  .produto-item div {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4; // 🟢 linhas internas mais compactas
+  }
+
+  .topo-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    button {
+      font-weight: 500;
+    }
+  }
+
+}
