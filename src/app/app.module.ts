@@ -36,6 +36,7 @@ import { CategoriaListComponent } from './pages/categoria-list/categoria-list.co
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { VendasComponent } from './pages/relatorio/vendas/vendas.component';
+import { ProdutoEditarComponent } from './pages/produtos-editar/produtos-editar.component';
 
 
 
@@ -57,7 +58,8 @@ import { VendasComponent } from './pages/relatorio/vendas/vendas.component';
     ProdutosCadastrarComponent,
     CategoriaCadastrarComponent,
     CategoriaListComponent,
-    VendasComponent
+    VendasComponent,
+    ProdutoEditarComponent
   ],
   imports: [
     BrowserModule,
