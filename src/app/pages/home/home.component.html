@@ -12,27 +12,27 @@
     <mat-card *ngFor="let cart of pedidos" class="pedido-card">     
       <mat-card-content>
         <div class="info-cliente">
-          <p><strong>ID do pedido:</strong> {{ cart.id }}</p>
+          <p><strong>ID do pedido:</strong> {{ cart.id.slice(0, 8) }}</p>
           <p><strong>Cliente:</strong> {{ cart.user?.name }}</p>
           <p><strong>Email:</strong> {{ cart.user?.email }}</p>
           <p><strong>WhatsApp:</strong> 
             <a *ngIf="cart.user?.whatsapp" 
-              [href]="'https://wa.me/' + cart.user.whatsapp" 
+              [href]="'https://wa.me/55' + cart.user.whatsapp" 
               target="_blank">
               {{ cart.user.whatsapp }}
             </a>
             <span *ngIf="!cart.user?.whatsapp"> Não informado</span>
           </p>
-          <p><strong>Data:</strong> {{ cart.createdAt | date:'dd/MM/yy, HH:mm' }}</p>
+          <p><strong>Data:</strong> {{ cart.createdAt | date:'dd/MM/yy - HH:mm' }}</p>
         </div>
 
         <p><strong>Produtos:</strong></p>
         <ul>
-          <li *ngFor="let item of cart.items">
-            <strong>ID Produto: </strong>{{ item.product.id }}
-            <strong>Nome: </strong>{{ item.product.name }}
-            <p><strong>Qtd: </strong>{{ item.quantity }}</p>
-          </li>
+          <div class="produto-item"  *ngFor="let item of cart.items">
+            <div><strong>ID Produto: </strong>{{ item.product.id.slice(0, 8) }}</div>
+            <div><strong>Nome: </strong>{{ item.product.name }}</div>
+            <div><strong>Qtd: </strong>{{ item.quantity }}</div>
+          </div>
         </ul>
       </mat-card-content>
 

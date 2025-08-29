@@ -1,4 +1,4 @@
-.home-container {
+.relatorio-container {
   max-width: 960px;
   margin: 2rem auto;
   padding: 1rem;
@@ -9,7 +9,7 @@
     gap: 1rem;
   }
 
-  .pedido-card {
+  .venda-card {
     background: #eff5ef;
     color: #000;
     border: 1px solid #ddd;
@@ -50,7 +50,7 @@
     }
   }
 
-  .sem-pedidos {
+  .sem-vendas {
     margin-top: 2rem;
     font-size: 1.2rem;
     color: #777;
@@ -65,6 +65,23 @@
     margin: 0;
     padding: 0;
     line-height: 1.4; // 🟢 linhas internas mais compactas
+  }
+
+  .topo-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    button {
+      font-weight: 500;
+    }
   }
 
 }

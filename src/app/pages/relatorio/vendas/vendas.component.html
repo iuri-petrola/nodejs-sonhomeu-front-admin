@@ -1,0 +1,45 @@
+<div class="relatorio-container">
+    <div class="topo-lista">
+      <h2>📊 Pedidos Finalizados</h2>
+
+      <button mat-stroked-button color="primary" [routerLink]="'/home'">
+        <mat-icon>arrow_back</mat-icon>
+        Voltar para Pedidos Aguardando Atendimento
+      </button>
+    </div>
+
+    <div *ngIf="vendas.length === 0" class="sem-vendas">
+      💤 Nenhum pedido finalizado.
+    </div>
+
+
+  <div class="lista-carrinhos">
+    <mat-card *ngFor="let venda of vendas" class="venda-card">
+      <mat-card-content>
+        <div class="info-cliente">
+          <p><strong>ID do pedido:</strong> {{ venda.id.slice(0, 8) }}</p>
+          <p><strong>Cliente:</strong> {{ venda.user?.name }}</p>
+          <p><strong>Email:</strong> {{ venda.user?.email }}</p>
+          <p><strong>WhatsApp:</strong> 
+            <a *ngIf="venda.user?.whatsapp" 
+              [href]="'https://wa.me/55' + venda.user.whatsapp" 
+              target="_blank">
+              {{ venda.user.whatsapp }}
+            </a>
+            <span *ngIf="!venda.user?.whatsapp"> Não informado</span>
+          </p>
+          <p><strong>Data:</strong> {{ venda.createdAt | date:'dd/MM/yy - HH:mm' }}</p>
+        </div>
+
+        <p><strong>Produtos:</strong></p>
+        <ul>
+          <div class="produto-item"  *ngFor="let item of venda.items">
+            <div><strong>ID Produto: </strong>{{ item.product.id.slice(0, 8) }}</div>
+            <div><strong>Nome: </strong>{{ item.product.name }}</div>
+            <div><strong>Qtd: </strong>{{ item.quantity }}</div>
+          </div>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
