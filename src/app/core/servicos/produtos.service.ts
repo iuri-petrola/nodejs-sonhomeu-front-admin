@@ -70,4 +70,13 @@ export class ProdutosService {
     return this.httpClient.put(`${this.apiUrl}/product/${id}`, formData, { headers });
   }
 
+  deletarProduto(id: string): Observable<any> {
+    const token = this.authService.getToken();
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`//,'Content-Type': 'application/json'
+    });
+
+    return this.httpClient.delete(`${this.apiUrl}/product/${id}`, { headers });
+  }
+
 }
